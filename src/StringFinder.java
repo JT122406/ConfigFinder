@@ -17,12 +17,12 @@ public class StringFinder {
             while(scan.hasNextLine()){
                 String line = scan.nextLine(); //read in current line
                 if(line.contains(args[0])){ //if line contains string to remove
-                    line = line.replace(args[0], ""); //remove string
-                    b = true;
+                    b = false;
                 }
                 else if (line.contains("biomesoplenty") || line.contains("minecraft"))
-                    b = false;
-                if ((!line.isBlank() && !line.isEmpty()) || b){
+                    b = true;
+
+                if (b){
                     sb.append(line); //append line to string builder only if there is things
                     sb.append("\n"); //append new line
                 }
